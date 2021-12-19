@@ -12,30 +12,38 @@ const Top = () => {
   const isMobile = useMediaQuery('(max-width: 992px)');
 
   return (
-    <div>
-      <div className="d-flex justify-content-between align-items-center">
-        <h4 className="text-disappear d-flex align-items-center">
-          <Icon
+    <div className ="background-bluegreen text-white text-bold">
+      
+      <div className="d-flex justify-content-between align-items-center ">
+        <div>
+      <Icon
             componentClass={Link}
             to="/"
             icon="arrow-circle-left"
             size="2x"
             className={
               isMobile
-                ? 'd-inline-block p-0 mr-2 text-blue link-unstyled'
+                ? 'd-inline-block p-0 ml-2 text-white link-unstyled'
                 : 'd-none'
             }
           />
-          <span className="text-disappear">{name}</span>
+          </div>
+          <div>
+        <h4 className="text-disappear d-flex align-items-center text-center ">
+         
+          <span className="text-disappear " style={{fontFamily:"cursive"
+          }}>{name}</span>
         </h4>
-
+        </div>
+        <div>
         <ButtonToolbar className="ws-nowrap">
           {isAdmin && <EditRoomBtnDrawer />}
         </ButtonToolbar>
+        </div>
       </div>
 
       <div className="d-flex justify-content-between align-items-center">
-        <span>Welcome</span>
+        <h6>ChatTalk</h6>
         <RoomInfoBtnModal />
       </div>
     </div>
